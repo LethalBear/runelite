@@ -255,6 +255,12 @@ public class XpTrackerPlugin extends Plugin
 		}
 	}
 
+	public void resetAllSkillState(Skill skill)
+	{
+		for (Skill s : Skill.values())
+			resetSkillState(s);
+	}
+
 
 	@Subscribe
 	public void onXpChanged(ExperienceChanged event)
