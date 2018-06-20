@@ -92,7 +92,7 @@ class BankTitle
 
 		if (config.showGE() && gePrice != 0)
 		{
-			strCurrentTab += " (EX: " + StackFormatter.quantityToStackSize(gePrice) + ")";
+			strCurrentTab += " (EX: " + StackFormatter.quantityToStackSize(gePrice) + " :) )";
 		}
 
 		if (config.showHA() && haPrice != 0)
