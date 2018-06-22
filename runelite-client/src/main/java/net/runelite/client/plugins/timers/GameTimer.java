@@ -37,6 +37,7 @@ import net.runelite.api.GraphicID;
 @Slf4j
 public enum GameTimer
 {
+	//imageName, itemName, length, unitType
 	STAMINA("stamina", "Stamina", 2, ChronoUnit.MINUTES),
 	ANTIFIRE("antifire", "Antifire", 6, ChronoUnit.MINUTES),
 	EXANTIFIRE("exantifire", "Extended antifire", 12, ChronoUnit.MINUTES),
