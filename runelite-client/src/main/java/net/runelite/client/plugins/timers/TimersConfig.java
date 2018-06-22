@@ -298,4 +298,15 @@ public interface TimersConfig extends Config
 	{
 		return true;
 	}
+
+	@ConfigItem(
+			position = 24,
+			keyName = "showDFS",
+			name = "Dragonfire shield timer",
+			description = "Configures whether dragonfire shield timer is displayed"
+	)
+	default boolean showDFS()
+	{
+		return true;
+	}
 }
