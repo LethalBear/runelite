@@ -72,7 +72,7 @@ public enum GameTimer
 	SUPERANTIPOISON("superantipoison", "Superantipoison", 346, ChronoUnit.SECONDS),
 	CHARGE("charge", "Charge", 6, ChronoUnit.MINUTES),
 	STAFF_OF_THE_DEAD("staffofthedead", "Staff of the Dead", GraphicID.STAFF_OF_THE_DEAD, 1, ChronoUnit.MINUTES),
-	DFS("dragonfireshield", "Dragonfire Shield", 2, ChronoUnit.MINUTES);
+	DRAGONFIRE_SHIELD("dragonfireshield", "Dragonfire Shield", 1165, 2, ChronoUnit.MINUTES);
 
 	@Getter
 	private final String imageResource;

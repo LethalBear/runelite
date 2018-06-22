@@ -48,42 +48,9 @@ import net.runelite.api.events.VarbitChanged;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
-import static net.runelite.client.plugins.timers.GameTimer.ANTIDOTEPLUS;
-import static net.runelite.client.plugins.timers.GameTimer.ANTIDOTEPLUSPLUS;
-import static net.runelite.client.plugins.timers.GameTimer.ANTIFIRE;
-import static net.runelite.client.plugins.timers.GameTimer.ANTIPOISON;
-import static net.runelite.client.plugins.timers.GameTimer.ANTIVENOM;
-import static net.runelite.client.plugins.timers.GameTimer.ANTIVENOMPLUS;
-import static net.runelite.client.plugins.timers.GameTimer.BIND;
-import static net.runelite.client.plugins.timers.GameTimer.CANNON;
-import static net.runelite.client.plugins.timers.GameTimer.CHARGE;
-import static net.runelite.client.plugins.timers.GameTimer.ENTANGLE;
-import static net.runelite.client.plugins.timers.GameTimer.EXANTIFIRE;
-import static net.runelite.client.plugins.timers.GameTimer.EXSUPERANTIFIRE;
-import static net.runelite.client.plugins.timers.GameTimer.FULLTB;
-import static net.runelite.client.plugins.timers.GameTimer.GOD_WARS_ALTAR;
-import static net.runelite.client.plugins.timers.GameTimer.HALFBIND;
-import static net.runelite.client.plugins.timers.GameTimer.HALFENTANGLE;
-import static net.runelite.client.plugins.timers.GameTimer.HALFSNARE;
-import static net.runelite.client.plugins.timers.GameTimer.HALFTB;
-import static net.runelite.client.plugins.timers.GameTimer.ICEBARRAGE;
-import static net.runelite.client.plugins.timers.GameTimer.ICEBLITZ;
-import static net.runelite.client.plugins.timers.GameTimer.ICEBURST;
-import static net.runelite.client.plugins.timers.GameTimer.ICERUSH;
-import static net.runelite.client.plugins.timers.GameTimer.IMBUEDHEART;
-import static net.runelite.client.plugins.timers.GameTimer.MAGICIMBUE;
-import static net.runelite.client.plugins.timers.GameTimer.OVERLOAD;
-import static net.runelite.client.plugins.timers.GameTimer.OVERLOAD_RAID;
-import static net.runelite.client.plugins.timers.GameTimer.PRAYER_ENHANCE;
-import static net.runelite.client.plugins.timers.GameTimer.SANFEW;
-import static net.runelite.client.plugins.timers.GameTimer.SNARE;
-import static net.runelite.client.plugins.timers.GameTimer.STAFF_OF_THE_DEAD;
-import static net.runelite.client.plugins.timers.GameTimer.STAMINA;
-import static net.runelite.client.plugins.timers.GameTimer.SUPERANTIFIRE;
-import static net.runelite.client.plugins.timers.GameTimer.SUPERANTIPOISON;
-import static net.runelite.client.plugins.timers.GameTimer.VENGEANCE;
-import static net.runelite.client.plugins.timers.GameTimer.VENGEANCEOTHER;
 import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
+
+import static net.runelite.client.plugins.timers.GameTimer.*;
 
 @PluginDescriptor(
 	name = "Timers"
@@ -207,6 +174,11 @@ public class TimersPlugin extends Plugin
 		if (!config.showStaffOfTheDead())
 		{
 			removeGameTimer(STAFF_OF_THE_DEAD);
+		}
+
+		if (!config.showDFS())
+		{
+			removeGameTimer(DRAGONFIRE_SHIELD);
 		}
 
 		if (!config.showVengeance())
@@ -465,6 +437,11 @@ public class TimersPlugin extends Plugin
 		if (config.showStaffOfTheDead() && actor.getGraphic() == STAFF_OF_THE_DEAD.getGraphicId())
 		{
 			createGameTimer(STAFF_OF_THE_DEAD);
+		}
+		if (config.showDFS() && actor.getGraphic() == DRAGONFIRE_SHIELD.getGraphicId())
+		{
+			System.out.println("Creating DFS timer.");
+			createGameTimer(DRAGONFIRE_SHIELD);
 		}
 
 		if (config.showFreezes())
