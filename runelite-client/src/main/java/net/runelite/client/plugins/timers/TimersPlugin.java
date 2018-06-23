@@ -440,7 +440,6 @@ public class TimersPlugin extends Plugin
 		}
 		if (config.showDFS() && actor.getGraphic() == DRAGONFIRE_SHIELD.getGraphicId())
 		{
-			System.out.println("Creating DFS timer.");
 			createGameTimer(DRAGONFIRE_SHIELD);
 		}
 
